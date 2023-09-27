@@ -1,0 +1,46 @@
+Language = {
+    "ko": 
+      {
+        "replaceContent": "문자 바꾸기",
+        "tellMeFeedback": "필요한 기능이나, 오류사항 등을 알려 주세요 :)",
+        "inputType": "입력 유형",
+        "selfInput": "직접 입력",
+        "fileUpload": "텍스트 파일 업로드",
+        "textInput": "텍스트 입력",
+        "helpMessage": "개행 문자(엔터)는 \\r\\n 혹은 \\n 으로 입력하세요.",
+        "targetWord": "바꿀 문자",
+        "replaceWord": "대체할 문자",
+        "delete": "삭제",
+        "add": "추가",
+        "replace": "바꾸기",
+        "download": "다운로드",
+        "fileNull": "파일을 업로드 해주세요",
+        "originalTextLength": "원본 내용의 글자 수",
+        "replacementTextLength": "바꾼 내용의 글자 수",
+        "copyResult": "결과 복사",
+        "successCopy": "결과가 클립보드에 복사되었습니다."
+      }
+    ,
+    "en": 
+      {
+        "replaceContent": "Replace Text",
+        "tellMeFeedback": "Please let me know what functions or errors you need :)",
+        "inputType": "Input Type",
+        "selfInput": "Direct input",
+        "fileUpload": "Uploading a Text File",
+        "textInput": "Enter text",
+        "helpMessage": "Enter \\r\\n or \\n for open texts.",
+        "targetWord": "Text to change",
+        "replaceWord": "Replacement texts",
+        "delete": "Delete",
+        "add": "Add",
+        "replace": "Replace",
+        "download": "download",
+        "fileNull": "Please upload the file",
+        "originalTextLength": "Number of characters in the original content",
+        "replacementTextLength": "Number of characters changed",
+        "copyResult": "Copy Results",
+        "successCopy": "The results have been copied to the clipboard."
+      }
+    
+}

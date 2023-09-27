@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문자 바꾸기</title>
+    <script type="text/javascript" src="language.json"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script type="text/javascript" src="replacement.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="replacement.css">
+</head>
+
+<body onload="whereAreYouFrom()">
+    <div id="contentsWrap">
+        <h1 id="contentTitle">문자 바꾸기</h1>
+
+        <div id="linkWrap">
+            <div style="color:#8e8e8e; margin-bottom: 10px;" id="feedback">
+                필요한 기능이나, 오류사항 등을 알려주세요 :)
+            </div>
+            <div>
+                <a href="https://github.com/cnksncks0411" aria-label="github"><img src="github.png"/></a>
+                <a href="https://www.instagram.com/heeeeeetae/" aria-label="instagram"><img src="instagram.png" width="32px"/></a>
+                <a href="javascript:location.href='mailto:' + ['cnksncks0411','naver.com'].join('@')" aria-label="email"><img src="email.png"/></a>
+            </div>
+        </div>
+
+        <form id="uploadForm" enctype="multipart/form-data">
+            <!-- 파일 업로드 또는 직접 입력 선택 -->
+            <label for="inputType" id="inputTypeLabel">입력 유형:</label>
+            <select id="inputType" onchange="toggleInputMethod()">
+                <option value="direct" id="direct">직접 입력</option>
+                <option value="upload" id="upload">파일 업로드</option>
+            </select><br><br>
+
+            <!-- 파일 업로드 -->
+            <div id="fileUploadSection" style="display: none;">
+                <label for="fileInput" id="fileInputLabel">파일 업로드:</label>
+                <input type="file" id="fileInput" name="fileInput" accept=".txt">
+                <br><br>
+            </div>
+
+            <!-- 직접 입력 -->
+            <div id="textInputSection">
+                <!-- 텍스트 입력 처리 -->
+                <label for="textInput" id="textInputLabel">텍스트 입력:</label><br />
+                <textarea id="textInput" rows="15" cols="40"></textarea>
+            </div>
+
+            <span class="helpMessage" id="helpMessage">개행 문자(엔터)는 \n 으로 입력하세요.</span><br /><br />
+            
+            <!-- 치환할 단어와 대체할 단어를 입력하는 세트 -->
+            <div id="replacementSet">
+                <div class="replacementRow">
+                    <input type="text" class="targetWordInput" placeholder="치환할 단어" />
+                    <input type="text" class="replacementWordInput" placeholder="대체할 단어" />
+                    <button type='button' onclick='removeReplacementSet(this)' class="deleteButton">삭제</button>
+                </div>
+            </div>
+
+            <!-- 추가 버튼 -->
+            <button class='longButton' id="addButton" type='button' onclick='addReplacementSet()'>추가</button><br /><br />
+
+            <!-- 바꾸기 버튼 -->
+            <div style="margin-top: 30px; text-align: center; width: 100%;">
+                <img id="changeContent" src="32.png" alt="replace" onclick="replaceWords()" >
+            </div>
+
+            <div id="resultArea" style="display: none;"></div>
+            <a href="#" download="" style= "display: none;" id= "downloadLink">다운로드</a>
+        </form>
+    </div>
+</body>
+
+</html>

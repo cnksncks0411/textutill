@@ -1,0 +1,119 @@
+html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+select,
+input[type="file"],
+textarea {
+    font-size: 16px;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: none;
+}
+
+.replacementRow {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.replacementRow input[type="text"] {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.replacementRow button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    cursor: pointer;
+}
+
+button[type="button"] {
+    background-color: #3b5f9d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor:pointer;
+    border-radius: 5px;
+}
+
+button[type="button"]:hover {
+    background-color: #95b0df;
+}
+
+#resultArea {
+  background-color: #f2f2f2;
+  padding: 10px;
+  margin-top: 20px;
+  white-space: pre-wrap;
+}
+
+#copyButton {
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  float: right;
+}
+
+.longButton {
+    width: 100%;
+}
+#changeContent:hover {
+    cursor: pointer;
+}
+.helpMessage {
+    color: #8e8e8e;
+}
+#downloadLink {
+    display: block;
+    background-color: #3b5f9d;
+    color: white;
+    border: none;
+    padding: 10px 0px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 13px;
+    margin-top: 10px;
+}
+#downloadLink:hover {
+    background-color: #95b0df;
+}
+
+#linkWrap {
+    text-align: center;
+    width: 100%;
+}
