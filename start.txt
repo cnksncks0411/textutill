@@ -1,0 +1,21 @@
+#!/bin/sh
+
+DIR=/opt/clex/admin
+APPLICATION=admin-service
+PIDFILE="./${APPLICATION}.pid"
+
+cd $DIR
+
+if [ -f $PIDFILE ];
+then
+	PID=${cat $PIDFILE}
+	if ps -p $PID > /dev/null
+		echo "${APPLICATION} was already started.(oid:${PID})"
+		return 0
+	fi
+fi
+
+echo "${APPLICATION} starting..."
+nohup java -jar $APPLICATION > /dev/null 2>&1 &
+echo "${APPLICATION} started"
+return 1

@@ -1,0 +1,30 @@
+#!/bin/sh
+  
+DIR=/opt/clex/admin
+APPLICATION=admin-service
+PIDFILE="${APPLICATION}.pid"
+
+cd $DIR
+
+if [ -f $PIDFILE ];
+then
+        PID=$(cat $PIDFILE)
+        if ps -p $PID > /dev/null
+        then
+            echo "killing ${APPLICATION}(pid:${PID})..."
+            kill -15 $PID
+
+            while ps -p "$PID" > /dev/null 2>&1; do
+                sleep 1
+                WAIT_LOOP=$((WAIT_LOOP+1))
+                if [ "$WAIT_LOOP" = "$3" ]; then
+                        break
+                fi
+            done
+            echo "killed ${APPLICATION}."
+        fi
+        rm -rf $PIDFILE
+else
+        echo "${APPLICATION} is not started."
+
+fi
