@@ -113,7 +113,8 @@ function removeReplacementSet(button) {
 function replaceWords() {
     var replacements = document.getElementsByClassName("replacementRow");  // 치환 영역
     var type = document.getElementById("inputType").value;   // 타입
-    let result = "";
+    var result = "";
+    var originalContents = "";
 
     if(type == "upload") {  // 파일 업로드의 경우
         let file = document.getElementById("fileInput").files[0];   // 파일
@@ -127,6 +128,7 @@ function replaceWords() {
 
         reader.onload = function (e) {
             contents = e.target.result;
+            originalContents = contents;
             contentsLength = contents.length;
 
             for (var i in replacements) {
@@ -152,13 +154,14 @@ function replaceWords() {
 
             // 결과 확인 영역 업데이트
             updateResultArea(contentsLength, result);
+            saveData(type, originalContents, result);
         };
 
         reader.readAsText(file);
-
     }else {     // 직접 입력의 경우
         // 텍스트 입력 처리
         var textContent = document.getElementById("textInput").value;
+        originalContents = textContent;
         let textContentLength = textContent.length;
 
         // 치환 작업 수행
@@ -173,10 +176,29 @@ function replaceWords() {
         
         // 결과 확인 영역 업데이트
         updateResultArea(textContentLength, result);
+        saveData(type, originalContents, result);
     }
-    
 }
 
+const saveData = (type, originalContents, newContents) => {
+    let data = {
+        replacement_type : type,
+        original_text : originalContents,
+        replacement_text : newContents
+    };
+    
+    $.ajax({
+        url: "test.php",
+        data: data,
+        method: "POST",
+        error: function(e) {
+            console.log(e.status);
+        },
+        success: function(data) {
+            console.log(data);
+        }
+    });
+}
 // 치환 후 결과창 업데이트 함수
 function updateResultArea(originalSize, result) {
     var resultArea = document.getElementById("resultArea");
