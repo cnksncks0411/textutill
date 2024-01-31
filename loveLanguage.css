@@ -1,0 +1,39 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #ffc0cb; /* 사랑스러운 핑크색으로 배경색을 설정했습니다. */
+    font-family: 'Noto Sans KR', sans-serif; /* 가독성이 좋은 폰트를 사용했습니다. */
+}
+
+.container {
+    text-align: center;
+}
+
+.title {
+    margin-bottom: 30px;
+    font-size: 2em;
+}
+
+.start-button, .choice {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ff69b4; /* 사랑스러운 핫핑크색으로 버튼색을 설정했습니다. */
+    color: white;
+    cursor: pointer;
+}
+
+.blog-link {
+    display: block;
+    margin-top: 30px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.question-container {
+    display: none;
+}
