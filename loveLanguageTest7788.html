@@ -8,7 +8,7 @@
     <meta name="google-adsense-account" content="ca-pub-4738170896884355">
 
     <title>7788 사랑의 언어 테스트</title>
-    <script type="text/javascript" src="language.json"></script>
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script type="text/javascript" src="loveLanguage.js"></script>
@@ -19,12 +19,17 @@
 <body>
     <div class="container">
         <h1 class="title">5가지 사랑의 언어 테스트</h1>
+        <h3 class="subTitle"></h3>
         <button class="start-button">테스트 시작하기</button>
         <div class="question-container">
             <h3 id="questionCount"></h3>
             <p class="question">다음 중 자신이 더 선호하는 것을 선택해 주세요.</p>
             <button type="button" class="choice"></button>
             <button type="button" class="choice"></button>
+        </div>
+        <div class="result-container">
+            <div id="result"></div>
+            <button type="button" class="shareKakao" id="kakao-link-btn"></button>
         </div>
         <a href="https://blog.naver.com/7788newlife" class="blog-link">칠칠이와 팔팔이의 신혼생활 블로그 바로가기</a>
     </div>
