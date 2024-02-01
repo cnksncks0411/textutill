@@ -172,6 +172,7 @@ $(document).on('click', '.choice', (item) => {
         $(".subTitle").text("2위 : "+score[1].name+"("+score[1].value+") / "+"3위 : "+score[2].name+"("+score[2].value+") / "+"4위 : "+score[3].name+"("+score[3].value+") / "+"5위 : "+score[4].name+"("+score[4].value+")");
         $("#result").html(score[0].result);
         thu = score[0].img;
+        createShareKakao();
     }
 });
 
@@ -227,10 +228,12 @@ function copyUrl() {
     alert("url이 복사되었습니다.🤩");
 }
   
-  Kakao.Link.createCustomButton({
-    container: "#kakao-link-btn",
-    templateId: 103816,
-    templateArgs: {
-        'THU': thu
-    }
-  });
+function createShareKakao(){
+    Kakao.Link.createCustomButton({
+      container: "#kakao-link-btn",
+      templateId: 103816,
+      templateArgs: {
+          'THU': thu
+      }
+    });
+}

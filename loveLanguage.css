@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+@import url(https://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 .nanumgothic * {
  font-family: 'Nanum Gothic', sans-serif;
@@ -56,4 +56,5 @@ body {
     line-height: 150%;
     font-weight: 900;
     border: 4px solid black;
+    margin-bottom: 20px;
 }
